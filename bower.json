@@ -1,0 +1,17 @@
+{
+  "name": "working-test",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Azizfcb <aziz50607080@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

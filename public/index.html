@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="/">
+
+        <title>Azzouz FPL</title>
+
+        <!-- CSS
+        <link rel="stylesheet" href="css/style.css">  custom styles -->
+
+        <!-- JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+        <!-- ANGULAR CUSTOM -->
+        <script src="app.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+    <body ng-app="azzouz-fpl" ng-controller="mainCtrl">
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" ng-click="hideModal()">&times;</span>
+                <p>error is : {{ error}}</p>
+            </div>
+
+        </div>
+        <div class="container">
+            <ul class="nav nav-tabs">
+                <li class="active" style="width: 100%;"><a data-toggle="tab" href="#home"><span >Khniss city statistiques</span></a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="home" class="element tab-pane in active">
+                    <div>
+                        <select class="list-option" ng-model="option" ng-change="isOption(option)">
+                            <option value="stats">statistiques kol wa7ed</option>
+                            <option value="cup">إلي تزعكو  مل كوب و إلي مازالو</option>
+                            <option value="h2h">مواجهات مباشرة</option>
+                            <option value="average">  Average Gameweek points 
+                            </option>  
+                        </select>
+
+                        <div ng-if="option == 'stats'" style="width: 77%;
+                             margin: 0 auto;">
+                            <select ng-model="playerStats" ng-change="getTeamStats(playerStats)">
+                                <option ng-repeat="player in leaguePlayers" value="{{player.entry}}">{{ player.player_name}}</option>
+                            </select >
+                            <div style="height: 100%;padding: 5px;margin-top: 10px;">
+                                <div style="border: 1px solid red;">
+                                    <span>
+                                        Used Chips:
+                                    </span>
+                                    <li ng-repeat="chip in teamStats.chips">
+                                        <span>{{ chip.chips}} GW</span>
+                                        <span>{{ chip.event}} -----> </span>
+                                        <span>{{ chip.points}} P</span>
+                                    </li>
+                                </div>
+                                <div style="border: 1px solid red;width: 50%;float: left;">
+                                    Total Trasnfer cost: {{ teamStats.totalTransfercost}}</div>
+                                <div style="border: 1px solid red;width: 50%;float: right;">
+                                    MaxPoints:
+                                    <span>
+                                        {{ teamStats.maxMinPoints.maxPoints.value}} In event  {{ teamStats.maxMinPoints.maxPoints.event}}
+                                    </span>
+                                </div>
+                                <div style="border: 1px solid red;width: 50%;float: left;margin-bottom:  10px;">
+                                    Min Points:
+                                    <span>
+                                        {{ teamStats.maxMinPoints.minPoints.value}} In event  {{ teamStats.maxMinPoints.minPoints.event}}
+                                    </span>
+                                </div>
+                                <div style="border: 1px solid red;width: 50%;float: right;margin-bottom:  10px;">
+                                    Max Benched:
+                                    <span>
+                                        {{ teamStats.maxMinPoints.maxBenchedPoints.value}} In event  {{ teamStats.maxMinPoints.maxBenchedPoints.event}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <div ng-if="option == 'h2h'">
+                        <select ng-model="player1">
+                            <option ng-repeat="player in leaguePlayers" value="{{player.entry}}">{{ player.player_name}}</option>
+                        </select >
+                        <select ng-model="player2">
+                            <option ng-repeat="player in leaguePlayers" value="{{player.entry}}">{{ player.player_name}}</option>
+                        </select>
+                        <div>
+                            <button class="btn btn-primary" ng-click="h2h(player1, player2)">Resultat</button>
+                        </div>
+                        <div ng-if="h2hData != undefined" style="width: 90%;margin: 0 auto;margin-top: 35px;font-size: 28px;">
+                            <span>{{ h2hData.player1.name}} : {{ h2hData.player1.wins}}</span>
+                            <br>
+                            <span>{{ h2hData.player2.name}} : {{ h2hData.player2.wins}}</span>
+                            <br>
+                            <span>Null: {{ h2hData.draw}} </span>
+                            <br>
+                        </div>
+                    </div>
+                    <div ng-if="option == 'cup'" style="width: 77%;
+                         margin: 0 auto;">
+                        <li style="font-size: 15px;" ng-repeat="player in leaguePlayersInCup" class="item" ng-class="player.cupStatus ? 'success' : 'danger'">{{ player.teamName}}<span style="margin-right: 5px;float: right"> Played: {{ player.cupRoundsPlayed.roundsPlayed}}</span> </li>
+                    </div>
+                    <div ng-if="option == 'average'" style="width: 77%;
+                         margin: 0 auto;">
+                        <li style="font-size: 18px;" ng-class="averageData.average > 0 ? player.event_total > averageData.average ? 'success' : 'danger' : ''" ng-repeat="player in leaguePlayers" class="item" >{{ player.entry_name}}<span style="margin-right: 5px;float: right"> {{player.event_total}}/{{averageData.average}}</span></li>
+                    </div>
+                    <div ng-if="option == 'highLow'">
+                        {{ highestGameweek}}
+                        <!--                            <span>
+                                                        {{ highestGameweek.data.maxGameweekPoints.value }} --------- {{ highestGameweek.teamName }} in GW {{ highestGameweek.data.maxGameweekPoints.event }}
+                                                    </span>
+                                                    <br>
+                                                    <span>
+                                                        {{ lowesttGameweek.data.maxBenchedPoints.value }} --------- {{ lowesttGameweek.teamName }} in GW {{ lowesttGameweek.data.maxBenchedPoints.event }}
+                                                    </span>-->
+                    </div>
+                    <br>            
+
+                </div>
+            </div>
+
+            <!--<div id="menu5" class="element tab-pane fade">-->
+            <!--<div class="test"><h1>Total Transfert Cost</h1>-->
+            <!--<p>This feature let's you get total cost of transferts you made till the current gameweek</p>-->
+            <!--<P>Enter your team ID here:</P><input ng-model="id5" type="text" class="form-control">-->
+            <!--<button ng-click="totalCost(id5)" class="btn btn-primary">Get result</button>-->
+            <!--</div>-->
+            <!--<div class="test result"><h1>Result:</h1>-->
+            <!--<div class="data">{{ tcost }}</div>-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+
+    </body>
+</html>
