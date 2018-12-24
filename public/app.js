@@ -28,6 +28,9 @@ app.controller("mainCtrl", function ($scope, $http, $rootScope) {
         if (str == "highLow") {
             $scope.highestLowest($scope.leagueId)
         }
+        if (str == "captains") {
+            $scope.getCaptains($scope.leagueId)
+        }
         if (str == "stats") {
 //            $scope.TeamStats($scope.leagueId)
         }
@@ -41,6 +44,17 @@ app.controller("mainCtrl", function ($scope, $http, $rootScope) {
 
 
             console.log($scope.teamStats)
+        }, function errorCallback(response) {
+            console.log(response)
+        });
+    }
+    $scope.getCaptains = function (leagueId) {
+        $http({
+            method: 'GET',
+            url: '/captains/' + leagueId
+        }).then(function successCallback(response) {
+            console.log(response)
+            $scope.playersCaptains = response.data.sort(compare);
         }, function errorCallback(response) {
             console.log(response)
         });
@@ -116,3 +130,11 @@ app.controller("mainCtrl", function ($scope, $http, $rootScope) {
         }
     }
 });
+
+function compare(a,b) {
+  if (a.captainScore > b.captainScore)
+    return -1;
+  if (a.captainScore < b.captainScore)
+    return 1;
+  return 0;
+}

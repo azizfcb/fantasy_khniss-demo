@@ -47,9 +47,13 @@ function teamStats(id, callback) {
         callback(err)
     })
 }
-
-
-
+function getCaptains(leagueId, callback) {
+    azifpl.getCaptains(leagueId).then(function (res) {
+        callback(res)
+    }, function (err) {
+        callback(err)
+    })
+}
 
 app.get('/league-data/:leagueId', function (req, res) {
     leaguePlayers(req.params.leagueId, function (x) {
@@ -76,8 +80,13 @@ app.get('/cup/:leagueId', function (req, res) {
         res.send(x);
     });
 })
+app.get('/captains/:leagueId', function (req, res) {
+    getCaptains(req.params.leagueId, function (x) {
+        res.send(x);
+    });
+})
 app.get('/team-stats/:teamId', function (req, res) {
-     teamStats(req.params.teamId, function (x) {
+    teamStats(req.params.teamId, function (x) {
         res.send(x);
     });
 })

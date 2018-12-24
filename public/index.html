@@ -43,6 +43,7 @@
                             <option value="stats">statistiques kol wa7ed</option>
                             <option value="cup">إلي تزعكو  مل كوب و إلي مازالو</option>
                             <option value="h2h">مواجهات مباشرة</option>
+                            <option value="captains"> captain kol wa7ed</option>
                             <option value="average">  Average Gameweek points 
                             </option>  
                         </select>
@@ -128,6 +129,10 @@
                                                     <span>
                                                         {{ lowesttGameweek.data.maxBenchedPoints.value }} --------- {{ lowesttGameweek.teamName }} in GW {{ lowesttGameweek.data.maxBenchedPoints.event }}
                                                     </span>-->
+                    </div>
+                     <div ng-if="option == 'captains'" style="width: 77%;
+                         margin: 0 auto;">
+                        <li style="font-size: 18px;" ng-repeat="player in playersCaptains" class="item" >{{ player.teamName}} / {{player.captain}} / {{ player.captainScore }} </li>
                     </div>
                     <br>            
 
