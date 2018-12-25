@@ -10,12 +10,21 @@ app.run(function ($rootScope, $http) {
     }, function errorCallback(response) {
         console.log(response)
     });
+    $http({
+        method: 'GET',
+        url: 'https://fantasy.premierleague.com/drf/bootstrap-static'
+    }).then(function successCallback(response) {
+        console.log($rootScope.leaguePlayers)
+    }, function errorCallback(response) {
+        console.log(response)
+    });
 })
 app.controller("mainCtrl", function ($scope, $http, $rootScope) {
 
     $scope.leagueId = 9908;
     $scope.maxi = function (x) {}
     $rootScope.option = 0;
+    $rootScope.gameweek = 0;
 
     $scope.isOption = function (str) {
         $scope.option == str;
@@ -33,7 +42,7 @@ app.controller("mainCtrl", function ($scope, $http, $rootScope) {
             $scope.getCaptains($scope.leagueId)
         }
         if (str == "transfer") {
-            $scope.getTransfers($scope.leagueId)
+            $scope.getTransfers($scope.leagueId,0)
         }
         if (str == "stats") {
 //            $scope.TeamStats($scope.leagueId)
@@ -53,13 +62,11 @@ app.controller("mainCtrl", function ($scope, $http, $rootScope) {
             console.log(response)
         });
     }
-    $scope.getTransfers = function (leagueId) {
+    $scope.getTransfers = function (leagueId,gameweek) {
         $scope.loading = true
-
-
         $http({
             method: 'GET',
-            url: '/transfers/18/' + leagueId
+            url: '/transfers/' + (gameweek != 0 ? gameweek : '18')  + '/'+ leagueId
         }).then(function successCallback(response) {
             $scope.loading = false
 
@@ -184,7 +191,6 @@ function compare(a, b) {
         return 1;
     return 0;
 }
-
 function compareTransfer(a, b) {
     if (a.transfers.length > b.transfers.length)
         return -1;

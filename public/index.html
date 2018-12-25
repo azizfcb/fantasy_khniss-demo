@@ -133,6 +133,25 @@
                     <img ng-if="loading" src="loader.gif" style="margin-top: 25px;height: 35px;"/>
                     <div ng-if="option == 'transfer'" style="width: 77%;
                          margin: 0 auto;">
+                         Gameweek: <select style="    margin-bottom: 5px;" ng-model="gameweek" ng-change="getTransfers(9908,gameweek)">
+                            <option  value="2">Gameweek 2</option>
+                            <option  value="3">Gameweek 3</option>
+                            <option  value="4">Gameweek 4</option>
+                            <option  value="5">Gameweek 5</option>
+                            <option  value="6">Gameweek 6</option>
+                            <option  value="7">Gameweek 7</option>
+                            <option  value="8">Gameweek 8</option>
+                            <option  value="9">Gameweek 9</option>
+                            <option  value="10">Gameweek 10</option>
+                            <option  value="11">Gameweek 11</option>
+                            <option  value="12">Gameweek 12</option>
+                            <option  value="13">Gameweek 13</option>
+                            <option  value="14">Gameweek 14</option>
+                            <option  value="15">Gameweek 15</option>
+                            <option  value="16">Gameweek 16</option>
+                            <option  value="17">Gameweek 17</option>
+                            <option  value="18">Gameweek 18</option>
+                        </select>
                         <div style="    font-size: 18px;
                              text-align: left;
                              border: 3px solid;
