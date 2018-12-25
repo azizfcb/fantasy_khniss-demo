@@ -44,8 +44,8 @@
                             <option value="cup">إلي تزعكو  مل كوب و إلي مازالو</option>
                             <option value="h2h">مواجهات مباشرة</option>
                             <option value="captains"> captain kol wa7ed</option>
-                            <option value="average">  Average Gameweek points 
-                            </option>  
+                            <option value="transfer"> Transfer kol wa7ed</option>
+                            <option value="average">  Average Gameweek points </option>  
                         </select>
 
                         <div ng-if="option == 'stats'" style="width: 77%;
@@ -89,10 +89,6 @@
                     </div>
 
 
-
-
-
-
                     <div ng-if="option == 'h2h'">
                         <select ng-model="player1">
                             <option ng-repeat="player in leaguePlayers" value="{{player.entry}}">{{ player.player_name}}</option>
@@ -130,9 +126,37 @@
                                                         {{ lowesttGameweek.data.maxBenchedPoints.value }} --------- {{ lowesttGameweek.teamName }} in GW {{ lowesttGameweek.data.maxBenchedPoints.event }}
                                                     </span>-->
                     </div>
-                     <div ng-if="option == 'captains'" style="width: 77%;
+                    <div ng-if="option == 'captains'" style="width: 77%;
                          margin: 0 auto;">
-                        <li style="font-size: 18px;" ng-repeat="player in playersCaptains" class="item" >{{ player.teamName}} / {{player.captain}} / {{ player.captainScore }} </li>
+                        <li style="font-size: 12px;text-align: left;" ng-repeat="player in playersCaptains" class="item" >{{ player.teamName}} / {{player.captain}} / {{ player.captainScore}} </li>
+                    </div>
+                    <img ng-if="loading" src="loader.gif" style="margin-top: 25px;height: 35px;"/>
+                    <div ng-if="option == 'transfer'" style="width: 77%;
+                         margin: 0 auto;">
+                        <div style="    font-size: 18px;
+                             text-align: left;
+                             border: 3px solid;
+                             margin-bottom: 6px;
+                             border-radius: 4px;" ng-repeat="player in playerTransfers" class="item" >
+                            <span>{{ player.teamName}}</span>
+                            <div ng-if="player.transfers.length > 0" style="border: 1px solid;
+                                 margin-bottom: 6px;
+                                 margin-left: 5px;
+                                 margin-right: 19px;">
+                                <div ng-repeat="transfer in player.transfers" style="
+
+                                     font-size: 13px;
+                                     margin: 0;
+                                     margin-bottom: -1px;
+                                     text-align: center;
+                                     border-bottom: 1px dashed;
+
+                                     ">
+                                    <div> <span class="glyphicon glyphicon-arrow-right" style="color:green;"></span> {{ transfer.transfer_in}} / {{transfer.transfer_in_points}} </div>
+                                    <div><span class="glyphicon glyphicon-arrow-left" style="color:red;"></span> {{ transfer.transfer_out}} / {{transfer.transfer_out_points}} </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <br>            
 
