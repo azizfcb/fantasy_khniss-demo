@@ -42,7 +42,7 @@ app.controller("mainCtrl", function ($scope, $http, $rootScope) {
             $scope.getCaptains($scope.leagueId)
         }
         if (str == "transfer") {
-            $scope.getTransfers($scope.leagueId,0)
+            $scope.getTransfers($scope.leagueId, 0)
         }
         if (str == "stats") {
 //            $scope.TeamStats($scope.leagueId)
@@ -62,11 +62,11 @@ app.controller("mainCtrl", function ($scope, $http, $rootScope) {
             console.log(response)
         });
     }
-    $scope.getTransfers = function (leagueId,gameweek) {
+    $scope.getTransfers = function (leagueId, gameweek) {
         $scope.loading = true
         $http({
             method: 'GET',
-            url: '/transfers/' + (gameweek != 0 ? gameweek : '18')  + '/'+ leagueId
+            url: '/transfers/' + (gameweek != 0 ? gameweek : '19') + '/' + leagueId
         }).then(function successCallback(response) {
             $scope.loading = false
 
@@ -150,7 +150,7 @@ app.controller("mainCtrl", function ($scope, $http, $rootScope) {
         });
     }
     $scope.h2h = function (x, y) {
-        
+
         if (x == undefined || y == undefined) {
             alert('a5tar equipe yazzebi!')
         } else if (x == y) {
@@ -189,7 +189,16 @@ function compare(a, b) {
         return -1;
     if (a.captainScore < b.captainScore)
         return 1;
-    return 0;
+
+    if (a.captainScore == b.captainScore) {
+        if (a.captain < b.captain) {
+            return -1;
+        }
+        if (a.captain > b.captain) {
+            return 1;
+        }
+        return 0;
+    }
 }
 function compareTransfer(a, b) {
     if (a.transfers.length > b.transfers.length)

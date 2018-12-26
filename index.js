@@ -2,7 +2,7 @@ var azifpl = require('azifpl');
 var express = require('express');
 var app = express();
 var scheduler = require('node-schedule');
-var currentEvent = 18;
+var currentEvent = 19;
 var port = process.env.PORT || 8080;
 var transfers = require('./archive.json')
 
@@ -51,14 +51,14 @@ function teamStats(id, callback) {
     })
 }
 function getCaptains(leagueId, callback) {
-    azifpl.getCaptains(leagueId).then(function (res) {
+    azifpl.getCaptains(leagueId,currentEvent).then(function (res) {
         callback(res)
     }, function (err) {
         callback(err)
     })
 }
 function getTransfers(event, leagueId, callback) {
-    if (event < 18) {
+    if (event < 19) {
         callback(transfers[event - 2])
     } else {
         azifpl.getTransfersList(event, leagueId).then(function (res) {
@@ -116,8 +116,3 @@ app.get('*', function (req, res) {
 app.listen(port, function () {
     console.log('Example app listening on port 8080!');
 });
-//
-//
-//schedule.scheduleJob('42 * * * *', function(){
-//  currentEvent = http.get()
-//});

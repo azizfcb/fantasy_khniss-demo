@@ -128,7 +128,17 @@
                     </div>
                     <div ng-if="option == 'captains'" style="width: 77%;
                          margin: 0 auto;">
-                        <li style="font-size: 12px;text-align: left;" ng-repeat="player in playersCaptains" class="item" >{{ player.teamName}} / {{player.captain}} / {{ player.captainScore}} </li>
+                        <div style="
+                                     margin: 0;
+                                     margin-bottom: 4px;
+                                     text-align: center;
+border: 2px solid;
+    font-size: 25px;                                     border-radius: 2px;
+                                     " ng-repeat="player in playersCaptains" class="item" >
+                            <span styel=wi >{{ player.teamName}}</span>
+                            <div style="    font-size: 18px;">Captain: <span> {{player.captain}} / {{ player.captainScore}} </span></div>
+                            <div style="    font-size: 18px;">Vice-C: <span>  {{player.viceCaptain}} / {{ player.viceCaptainScore}} </span></div>
+                        </div>
                     </div>
                     <img ng-if="loading" src="loader.gif" style="margin-top: 25px;height: 35px;"/>
                     <div ng-if="option == 'transfer'" style="width: 77%;
@@ -151,6 +161,7 @@
                             <option  value="16">Gameweek 16</option>
                             <option  value="17">Gameweek 17</option>
                             <option  value="18">Gameweek 18</option>
+                            <option  value="19">Gameweek 19</option>
                         </select>
                         <div style="    font-size: 18px;
                              text-align: left;
@@ -163,13 +174,11 @@
                                  margin-left: 5px;
                                  margin-right: 19px;">
                                 <div ng-repeat="transfer in player.transfers" style="
-
                                      font-size: 13px;
                                      margin: 0;
                                      margin-bottom: -1px;
                                      text-align: center;
                                      border-bottom: 1px dashed;
-
                                      ">
                                     <div> <span class="glyphicon glyphicon-arrow-right" style="color:green;"></span> {{ transfer.transfer_in}} / {{transfer.transfer_in_points}} </div>
                                     <div><span class="glyphicon glyphicon-arrow-left" style="color:red;"></span> {{ transfer.transfer_out}} / {{transfer.transfer_out_points}} </div>
