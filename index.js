@@ -7,7 +7,15 @@ var port = process.env.PORT || 8080;
 var transfers = require('./archive.json')
 
 app.use(express.static(__dirname + '/public'));
+app.use(function (req, res, next) {
+    console.log('-----------------------------------------------------------------------------------------------------------------------')
+    // do something with the request
+    console.log("ip adresse ---->" + req.connection.remoteAddress)
+    console.log("path ------>" + req.path)
+    console.log('-----------------------------------------------------------------------------------------------------------------------')
 
+    next(); // MUST call this or the routes will not be hit
+});
 function leaguePlayers(id, callback) {
     azifpl.getClassicLeagueTopTenPlayers(id).then(function (res) {
         callback(res)
@@ -50,11 +58,10 @@ function teamStats(id, callback) {
         callback(err)
     })
 }
-function getCaptains(leagueId,event, callback) {
-    
-    
-    console.log(leagueId + '   ' + event)
-    azifpl.getCaptains(leagueId,event).then(function (res) {
+function getCaptains(leagueId, event, callback) {
+
+
+    azifpl.getCaptains(leagueId, event).then(function (res) {
         callback(res)
     }, function (err) {
         callback(err)
@@ -99,7 +106,7 @@ app.get('/cup/:leagueId', function (req, res) {
     });
 })
 app.get('/captains/:leagueId/:currentEvent', function (req, res) {
-    getCaptains(req.params.leagueId, req.params.currentEvent,function (x) {
+    getCaptains(req.params.leagueId, req.params.currentEvent, function (x) {
         res.send(x);
     });
 })
