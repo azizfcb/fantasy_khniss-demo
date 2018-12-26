@@ -195,6 +195,9 @@
                                      ">
                                     <div> <span class="glyphicon glyphicon-arrow-right" style="color:green;"></span> {{ transfer.transfer_in}} / {{transfer.transfer_in_points}} </div>
                                     <div><span class="glyphicon glyphicon-arrow-left" style="color:red;"></span> {{ transfer.transfer_out}} / {{transfer.transfer_out_points}} </div>
+                                    <span style="float: right;
+    margin-top: -27px;
+    margin-right: 10px;" ng-if="transfer.transfer_in_points < transfer.transfer_out_points ">🐴</span>
                                 </div>
                             </div>
                         </div>
