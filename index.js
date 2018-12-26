@@ -2,7 +2,7 @@ var azifpl = require('azifpl');
 var express = require('express');
 var app = express();
 var scheduler = require('node-schedule');
-var currentEvent = 19;
+//var currentEvent = 19;
 var port = process.env.PORT || 8080;
 var transfers = require('./archive.json')
 
@@ -50,8 +50,8 @@ function teamStats(id, callback) {
         callback(err)
     })
 }
-function getCaptains(leagueId, callback) {
-    azifpl.getCaptains(leagueId,currentEvent).then(function (res) {
+function getCaptains(leagueId,event, callback) {
+    azifpl.getCaptains(leagueId,event).then(function (res) {
         callback(res)
     }, function (err) {
         callback(err)
@@ -95,8 +95,8 @@ app.get('/cup/:leagueId', function (req, res) {
         res.send(x);
     });
 })
-app.get('/captains/:leagueId', function (req, res) {
-    getCaptains(req.params.leagueId, function (x) {
+app.get('/captains/:leagueId/:currentEvent', function (req, res) {
+    getCaptains(req.params.leagueId, req.params.currentEvent,function (x) {
         res.send(x);
     });
 })

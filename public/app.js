@@ -1,5 +1,4 @@
 var app = angular.module("azzouz-fpl", []);
-
 app.run(function ($rootScope, $http) {
     $http({
         method: 'GET',
@@ -20,6 +19,7 @@ app.run(function ($rootScope, $http) {
     });
 })
 app.controller("mainCtrl", function ($scope, $http, $rootScope) {
+$scope.event = 19
 
     $scope.leagueId = 9908;
     $scope.maxi = function (x) {}
@@ -82,7 +82,7 @@ app.controller("mainCtrl", function ($scope, $http, $rootScope) {
 
         $http({
             method: 'GET',
-            url: '/captains/' + leagueId
+            url: '/captains/' + leagueId + '/' + $scope.event
         }).then(function successCallback(response) {
             $scope.loading = false
 
