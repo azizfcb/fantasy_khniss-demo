@@ -51,6 +51,9 @@ function teamStats(id, callback) {
     })
 }
 function getCaptains(leagueId,event, callback) {
+    
+    
+    console.log(leagueId + '   ' + event)
     azifpl.getCaptains(leagueId,event).then(function (res) {
         callback(res)
     }, function (err) {

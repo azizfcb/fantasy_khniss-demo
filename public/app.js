@@ -19,7 +19,7 @@ app.run(function ($rootScope, $http) {
     });
 })
 app.controller("mainCtrl", function ($scope, $http, $rootScope) {
-$scope.event = 19
+    $scope.event = 19
 
     $scope.leagueId = 9908;
     $scope.maxi = function (x) {}
@@ -78,6 +78,7 @@ $scope.event = 19
         });
     }
     $scope.getCaptains = function (leagueId) {
+        $scope.criteria = "captained";
         $scope.loading = true
 
         $http({
@@ -85,14 +86,22 @@ $scope.event = 19
             url: '/captains/' + leagueId + '/' + $scope.event
         }).then(function successCallback(response) {
             $scope.loading = false
-
-            console.log(response)
-            $scope.playersCaptains = response.data.sort(compare);
+            $scope.TeamCaptains = response.data
+            $scope.playersCaptains = Object.entries($scope.TeamCaptains.groupBy('captain')).sort(compareByCaptains)
         }, function errorCallback(response) {
             $scope.loading = false
 
             console.log(response)
         });
+    }
+    $scope.sortCaptains = function(criteria){
+        if(criteria == "captained"){
+            $scope.playersCaptains = Object.entries($scope.TeamCaptains.groupBy('captain')).sort(compareByCaptains)
+        }
+        else if(criteria == "score"){
+            $scope.playersCaptains = $scope.TeamCaptains.sort(compare)
+        }
+        console.log($scope.playersCaptains)
     }
     $scope.inCup = function (cupStatus) {
         return cupStatus ? "" : "X"
@@ -207,3 +216,22 @@ function compareTransfer(a, b) {
         return 1;
     return 0;
 }
+
+function compareByCaptains(a, b) {
+    if (a[1].length > b[1].length)
+        return -1;
+    if (a[1].length < b[1].length)
+        return 1;
+    return 0;
+}
+
+
+Array.prototype.groupBy = function (prop) {
+    return this.reduce(function (groups, item) {
+        var val = item[prop]
+        groups[val] = groups[val] || []
+        groups[val].push(item)
+        return groups
+    }, {})
+};
+    

@@ -11,7 +11,7 @@ body {
     width: 100%;
     margin: 0 auto;
     text-align: left;
-    padding-left: 15px;
+    /* padding-left: 15px; */
 }
 .success{
     background-color: #32b232;;
