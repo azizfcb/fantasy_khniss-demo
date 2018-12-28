@@ -19,7 +19,7 @@ app.run(function ($rootScope, $http) {
     });
 })
 app.controller("mainCtrl", function ($scope, $http, $rootScope) {
-    $scope.event = 19
+    $scope.event = 20
 
     $scope.leagueId = 9908;
     $scope.maxi = function (x) {}
@@ -66,7 +66,7 @@ app.controller("mainCtrl", function ($scope, $http, $rootScope) {
         $scope.loading = true
         $http({
             method: 'GET',
-            url: '/transfers/' + (gameweek != 0 ? gameweek : '19') + '/' + leagueId
+            url: '/transfers/' + (gameweek != 0 ? gameweek : '20') + '/' + leagueId
         }).then(function successCallback(response) {
             $scope.loading = false
 

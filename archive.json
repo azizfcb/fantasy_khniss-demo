@@ -15285,6 +15285,701 @@
             "teamName": "debbabi ghassen",
             "transfers_list": [],
             "transfers": []
+        }],
+    [{
+            "playerId": 4138725,
+            "teamName": "spenkes wiiw\nwiiw",
+            "transfers_list": [{
+                    "id": 119034361,
+                    "time_formatted": "26 Dec 11:04",
+                    "time": "2018-12-26T11:04:57Z",
+                    "element_in_cost": 62,
+                    "element_out_cost": 61,
+                    "element_in": 391,
+                    "element_out": 40,
+                    "entry": 4138725,
+                    "event": 19
+                }],
+            "transfers": [{
+                    "order": 0,
+                    "transfer_in": "Pereyra",
+                    "transfer_in_points": 9,
+                    "transfer_out": "Fraser",
+                    "transfer_out_points": 2
+                }]
+        }, {
+            "playerId": 3851827,
+            "teamName": "kùn aguero",
+            "transfers_list": [{
+                    "id": 118020920,
+                    "time_formatted": "25 Dec 22:21",
+                    "time": "2018-12-25T22:21:34Z",
+                    "element_in_cost": 71,
+                    "element_out_cost": 64,
+                    "element_in": 305,
+                    "element_out": 419,
+                    "entry": 3851827,
+                    "event": 19
+                }],
+            "transfers": [{
+                    "order": 0,
+                    "transfer_in": "Rashford",
+                    "transfer_in_points": 2,
+                    "transfer_out": "Chicharito",
+                    "transfer_out_points": 0
+                }]
+        }, {
+            "playerId": 3601366,
+            "teamName": "Ayed oussama",
+            "transfers_list": [{
+                    "id": 118138200,
+                    "time_formatted": "26 Dec 00:01",
+                    "time": "2018-12-26T00:01:56Z",
+                    "element_in_cost": 58,
+                    "element_out_cost": 62,
+                    "element_in": 149,
+                    "element_out": 391,
+                    "entry": 3601366,
+                    "event": 19
+                }, {
+                    "id": 118138201,
+                    "time_formatted": "26 Dec 00:01",
+                    "time": "2018-12-26T00:01:56Z",
+                    "element_in_cost": 47,
+                    "element_out_cost": 43,
+                    "element_in": 72,
+                    "element_out": 192,
+                    "entry": 3601366,
+                    "event": 19
+                }],
+            "transfers": [{
+                    "order": 0,
+                    "transfer_in": "Townsend",
+                    "transfer_in_points": 3,
+                    "transfer_out": "Pereyra",
+                    "transfer_out_points": 9
+                }, {
+                    "order": 1,
+                    "transfer_in": "Tarkowski",
+                    "transfer_in_points": 3,
+                    "transfer_out": "Schindler",
+                    "transfer_out_points": 1
+                }]
+        }, {
+            "playerId": 16559,
+            "teamName": "mohamed amine krayem",
+            "transfers_list": [{
+                    "id": 118799794,
+                    "time_formatted": "26 Dec 10:02",
+                    "time": "2018-12-26T10:02:28Z",
+                    "element_in_cost": 67,
+                    "element_out_cost": 63,
+                    "element_in": 151,
+                    "element_out": 45,
+                    "entry": 16559,
+                    "event": 19
+                }],
+            "transfers": [{
+                    "order": 0,
+                    "transfer_in": "Zaha",
+                    "transfer_in_points": 2,
+                    "transfer_out": "King",
+                    "transfer_out_points": 1
+                }]
+        }, {
+            "playerId": 1463484,
+            "teamName": "taha slimen",
+            "transfers_list": [],
+            "transfers": []
+        }, {
+            "playerId": 63322,
+            "teamName": "Hosni Zan Debbabi",
+            "transfers_list": [{
+                    "id": 114408199,
+                    "time_formatted": "22 Dec 19:48",
+                    "time": "2018-12-22T19:48:36Z",
+                    "element_in_cost": 44,
+                    "element_out_cost": 65,
+                    "element_in": 189,
+                    "element_out": 62,
+                    "entry": 63322,
+                    "event": 19
+                }],
+            "transfers": [{
+                    "order": 0,
+                    "transfer_in": "Kamara",
+                    "transfer_in_points": 2,
+                    "transfer_out": "Murray",
+                    "transfer_out_points": 1
+                }]
+        }, {
+            "playerId": 567387,
+            "teamName": "ghazi rassas",
+            "transfers_list": [{
+                    "id": 116476121,
+                    "time_formatted": "24 Dec 11:52",
+                    "time": "2018-12-24T11:52:35Z",
+                    "element_in_cost": 47,
+                    "element_out_cost": 46,
+                    "element_in": 72,
+                    "element_out": 69,
+                    "entry": 567387,
+                    "event": 19
+                }, {
+                    "id": 118035307,
+                    "time_formatted": "25 Dec 22:33",
+                    "time": "2018-12-25T22:33:46Z",
+                    "element_in_cost": 74,
+                    "element_out_cost": 62,
+                    "element_in": 465,
+                    "element_out": 391,
+                    "entry": 567387,
+                    "event": 19
+                }],
+            "transfers": [{
+                    "order": 0,
+                    "transfer_in": "Tarkowski",
+                    "transfer_in_points": 3,
+                    "transfer_out": "Lowton",
+                    "transfer_out_points": -1
+                }, {
+                    "order": 1,
+                    "transfer_in": "Felipe Anderson",
+                    "transfer_in_points": 15,
+                    "transfer_out": "Pereyra",
+                    "transfer_out_points": 9
+                }]
+        }, {
+            "playerId": 462383,
+            "teamName": "trimech hsan",
+            "transfers_list": [{
+                    "id": 116701281,
+                    "time_formatted": "24 Dec 15:28",
+                    "time": "2018-12-24T15:28:04Z",
+                    "element_in_cost": 43,
+                    "element_out_cost": 69,
+                    "element_in": 145,
+                    "element_out": 115,
+                    "entry": 462383,
+                    "event": 19
+                }, {
+                    "id": 116701282,
+                    "time_formatted": "24 Dec 15:28",
+                    "time": "2018-12-24T15:28:04Z",
+                    "element_in_cost": 132,
+                    "element_out_cost": 95,
+                    "element_in": 253,
+                    "element_out": 275,
+                    "entry": 462383,
+                    "event": 19
+                }, {
+                    "id": 116701283,
+                    "time_formatted": "24 Dec 15:28",
+                    "time": "2018-12-24T15:28:04Z",
+                    "element_in_cost": 49,
+                    "element_out_cost": 56,
+                    "element_in": 286,
+                    "element_out": 356,
+                    "entry": 462383,
+                    "event": 19
+                }],
+            "transfers": [{
+                    "order": 0,
+                    "transfer_in": "Wan-Bissaka",
+                    "transfer_in_points": 8,
+                    "transfer_out": "Alonso",
+                    "transfer_out_points": 2
+                }, {
+                    "order": 1,
+                    "transfer_in": "Salah",
+                    "transfer_in_points": 12,
+                    "transfer_out": "Sané",
+                    "transfer_out_points": 2
+                }, {
+                    "order": 2,
+                    "transfer_in": "Shaw",
+                    "transfer_in_points": 2,
+                    "transfer_out": "Davies",
+                    "transfer_out_points": 1
+                }]
+        }, {
+            "playerId": 906333,
+            "teamName": "adnen korbi",
+            "transfers_list": [{
+                    "id": 116538402,
+                    "time_formatted": "24 Dec 12:48",
+                    "time": "2018-12-24T12:48:23Z",
+                    "element_in_cost": 62,
+                    "element_out_cost": 63,
+                    "element_in": 437,
+                    "element_out": 45,
+                    "entry": 906333,
+                    "event": 19
+                }, {
+                    "id": 117017003,
+                    "time_formatted": "24 Dec 22:29",
+                    "time": "2018-12-24T22:29:37Z",
+                    "element_in_cost": 60,
+                    "element_out_cost": 51,
+                    "element_in": 353,
+                    "element_out": 245,
+                    "entry": 906333,
+                    "event": 19
+                }, {
+                    "id": 117022398,
+                    "time_formatted": "24 Dec 22:38",
+                    "time": "2018-12-24T22:38:59Z",
+                    "element_in_cost": 47,
+                    "element_out_cost": 50,
+                    "element_in": 400,
+                    "element_out": 213,
+                    "entry": 906333,
+                    "event": 19
+                }, {
+                    "id": 118083443,
+                    "time_formatted": "25 Dec 23:14",
+                    "time": "2018-12-25T23:14:23Z",
+                    "element_in_cost": 52,
+                    "element_out_cost": 49,
+                    "element_in": 101,
+                    "element_out": 126,
+                    "entry": 906333,
+                    "event": 19
+                }, {
+                    "id": 118091782,
+                    "time_formatted": "25 Dec 23:21",
+                    "time": "2018-12-25T23:21:35Z",
+                    "element_in_cost": 43,
+                    "element_out_cost": 43,
+                    "element_in": 405,
+                    "element_out": 138,
+                    "entry": 906333,
+                    "event": 19
+                }],
+            "transfers": [{
+                    "order": 0,
+                    "transfer_in": "Jiménez",
+                    "transfer_in_points": 2,
+                    "transfer_out": "King",
+                    "transfer_out_points": 1
+                }, {
+                    "order": 1,
+                    "transfer_in": "Alderweireld",
+                    "transfer_in_points": 6,
+                    "transfer_out": "Alexander-Arnold",
+                    "transfer_out_points": 11
+                }, {
+                    "order": 2,
+                    "transfer_in": "Fabianski",
+                    "transfer_in_points": 3,
+                    "transfer_out": "Schmeichel",
+                    "transfer_out_points": 3
+                }, {
+                    "order": 3,
+                    "transfer_in": "Paterson",
+                    "transfer_in_points": 0,
+                    "transfer_out": "Kanté",
+                    "transfer_out_points": 2
+                }, {
+                    "order": 4,
+                    "transfer_in": "Zabaleta",
+                    "transfer_in_points": 0,
+                    "transfer_out": "Tomkins",
+                    "transfer_out_points": 6
+                }]
+        }, {
+            "playerId": 715315,
+            "teamName": "saidi Montassar",
+            "transfers_list": [{
+                    "id": 117147630,
+                    "time_formatted": "25 Dec 03:44",
+                    "time": "2018-12-25T03:44:29Z",
+                    "element_in_cost": 71,
+                    "element_out_cost": 107,
+                    "element_in": 305,
+                    "element_out": 306,
+                    "entry": 715315,
+                    "event": 19
+                }, {
+                    "id": 117147631,
+                    "time_formatted": "25 Dec 03:44",
+                    "time": "2018-12-25T03:44:29Z",
+                    "element_in_cost": 68,
+                    "element_out_cost": 45,
+                    "element_in": 300,
+                    "element_out": 80,
+                    "entry": 715315,
+                    "event": 19
+                }],
+            "transfers": [{
+                    "order": 0,
+                    "transfer_in": "Rashford",
+                    "transfer_in_points": 2,
+                    "transfer_out": "Lukaku",
+                    "transfer_out_points": 0
+                }, {
+                    "order": 1,
+                    "transfer_in": "Lingard",
+                    "transfer_in_points": 5,
+                    "transfer_out": "Westwood",
+                    "transfer_out_points": 2
+                }]
+        }, {
+            "playerId": 835793,
+            "teamName": "mohamed ali benafia",
+            "transfers_list": [],
+            "transfers": []
+        }, {
+            "playerId": 351530,
+            "teamName": "brahim guezmil",
+            "transfers_list": [{
+                    "id": 116862704,
+                    "time_formatted": "24 Dec 18:35",
+                    "time": "2018-12-24T18:35:09Z",
+                    "element_in_cost": 62,
+                    "element_out_cost": 65,
+                    "element_in": 437,
+                    "element_out": 62,
+                    "entry": 351530,
+                    "event": 19
+                }],
+            "transfers": [{
+                    "order": 0,
+                    "transfer_in": "Jiménez",
+                    "transfer_in_points": 2,
+                    "transfer_out": "Murray",
+                    "transfer_out_points": 1
+                }]
+        }, {
+            "playerId": 2337240,
+            "teamName": "debbabi hamdi",
+            "transfers_list": [{
+                    "id": 117683067,
+                    "time_formatted": "25 Dec 16:53",
+                    "time": "2018-12-25T16:53:06Z",
+                    "element_in_cost": 56,
+                    "element_out_cost": 67,
+                    "element_in": 258,
+                    "element_out": 480,
+                    "entry": 2337240,
+                    "event": 19
+                }],
+            "transfers": [{
+                    "order": 0,
+                    "transfer_in": "Ings",
+                    "transfer_in_points": 2,
+                    "transfer_out": "Mitrovic",
+                    "transfer_out_points": 2
+                }]
+        }, {
+            "playerId": 2069488,
+            "teamName": "ahmed slimen",
+            "transfers_list": [{
+                    "id": 117634626,
+                    "time_formatted": "25 Dec 15:57",
+                    "time": "2018-12-25T15:57:58Z",
+                    "element_in_cost": 50,
+                    "element_out_cost": 54,
+                    "element_in": 484,
+                    "element_out": 4,
+                    "entry": 2069488,
+                    "event": 19
+                }, {
+                    "id": 117639852,
+                    "time_formatted": "25 Dec 16:04",
+                    "time": "2018-12-25T16:04:02Z",
+                    "element_in_cost": 50,
+                    "element_out_cost": 49,
+                    "element_in": 299,
+                    "element_out": 392,
+                    "entry": 2069488,
+                    "event": 19
+                }],
+            "transfers": [{
+                    "order": 0,
+                    "transfer_in": "Digne",
+                    "transfer_in_points": 17,
+                    "transfer_out": "Bellerín",
+                    "transfer_out_points": 0
+                }, {
+                    "order": 1,
+                    "transfer_in": "Herrera",
+                    "transfer_in_points": 4,
+                    "transfer_out": "Hughes",
+                    "transfer_out_points": 0
+                }]
+        }, {
+            "playerId": 4978224,
+            "teamName": "Souhail Ben Afia",
+            "transfers_list": [],
+            "transfers": []
+        }, {
+            "playerId": 1904484,
+            "teamName": "noureddine chaabannet",
+            "transfers_list": [],
+            "transfers": []
+        }, {
+            "playerId": 4924444,
+            "teamName": "salem ayed",
+            "transfers_list": [],
+            "transfers": []
+        }, {
+            "playerId": 625032,
+            "teamName": "sahbi kraiem",
+            "transfers_list": [],
+            "transfers": []
+        }, {
+            "playerId": 1080290,
+            "teamName": "ali trimech",
+            "transfers_list": [],
+            "transfers": []
+        }, {
+            "playerId": 5204289,
+            "teamName": "youssef brahel\nbrahem",
+            "transfers_list": [{
+                    "id": 116429132,
+                    "time_formatted": "24 Dec 11:12",
+                    "time": "2018-12-24T11:12:05Z",
+                    "element_in_cost": 85,
+                    "element_out_cost": 85,
+                    "element_in": 367,
+                    "element_out": 223,
+                    "entry": 5204289,
+                    "event": 19
+                }],
+            "transfers": [{
+                    "order": 0,
+                    "transfer_in": "Son",
+                    "transfer_in_points": 13,
+                    "transfer_out": "Mahrez",
+                    "transfer_out_points": 1
+                }]
+        }, {
+            "playerId": 5193967,
+            "teamName": "Nejmeddine Debbabi",
+            "transfers_list": [{
+                    "id": 114206636,
+                    "time_formatted": "22 Dec 17:39",
+                    "time": "2018-12-22T17:39:03Z",
+                    "element_in_cost": 63,
+                    "element_out_cost": 73,
+                    "element_in": 125,
+                    "element_out": 465,
+                    "entry": 5193967,
+                    "event": 19
+                }, {
+                    "id": 114206637,
+                    "time_formatted": "22 Dec 17:39",
+                    "time": "2018-12-22T17:39:03Z",
+                    "element_in_cost": 70,
+                    "element_out_cost": 58,
+                    "element_in": 305,
+                    "element_out": 493,
+                    "entry": 5193967,
+                    "event": 19
+                }],
+            "transfers": [{
+                    "order": 0,
+                    "transfer_in": "Pedro",
+                    "transfer_in_points": 1,
+                    "transfer_out": "Felipe Anderson",
+                    "transfer_out_points": 15
+                }, {
+                    "order": 1,
+                    "transfer_in": "Rashford",
+                    "transfer_in_points": 2,
+                    "transfer_out": "Rondón",
+                    "transfer_out_points": 0
+                }]
+        }, {
+            "playerId": 147692,
+            "teamName": "Mohamed Alaa krayem",
+            "transfers_list": [{
+                    "id": 116164322,
+                    "time_formatted": "24 Dec 06:54",
+                    "time": "2018-12-24T06:54:32Z",
+                    "element_in_cost": 54,
+                    "element_out_cost": 62,
+                    "element_in": 489,
+                    "element_out": 40,
+                    "entry": 147692,
+                    "event": 19
+                }, {
+                    "id": 116164323,
+                    "time_formatted": "24 Dec 06:54",
+                    "time": "2018-12-24T06:54:32Z",
+                    "element_in_cost": 79,
+                    "element_out_cost": 73,
+                    "element_in": 302,
+                    "element_out": 124,
+                    "entry": 147692,
+                    "event": 19
+                }],
+            "transfers": [{
+                    "order": 0,
+                    "transfer_in": "Snodgrass",
+                    "transfer_in_points": 2,
+                    "transfer_out": "Fraser",
+                    "transfer_out_points": 2
+                }, {
+                    "order": 1,
+                    "transfer_in": "Pogba",
+                    "transfer_in_points": 15,
+                    "transfer_out": "Willian",
+                    "transfer_out_points": 2
+                }]
+        }, {
+            "playerId": 689993,
+            "teamName": "achraf rassas",
+            "transfers_list": [],
+            "transfers": []
+        }, {
+            "playerId": 5493415,
+            "teamName": "achraf ayed",
+            "transfers_list": [],
+            "transfers": []
+        }, {
+            "playerId": 5521493,
+            "teamName": "كابتن ماجد",
+            "transfers_list": [{
+                    "id": 113855276,
+                    "time_formatted": "21 Dec 23:53",
+                    "time": "2018-12-21T23:53:32Z",
+                    "element_in_cost": 74,
+                    "element_out_cost": 62,
+                    "element_in": 465,
+                    "element_out": 40,
+                    "entry": 5521493,
+                    "event": 19
+                }, {
+                    "id": 113855277,
+                    "time_formatted": "21 Dec 23:53",
+                    "time": "2018-12-21T23:53:32Z",
+                    "element_in_cost": 110,
+                    "element_out_cost": 62,
+                    "element_in": 122,
+                    "element_out": 391,
+                    "entry": 5521493,
+                    "event": 19
+                }, {
+                    "id": 113855278,
+                    "time_formatted": "21 Dec 23:53",
+                    "time": "2018-12-21T23:53:32Z",
+                    "element_in_cost": 55,
+                    "element_out_cost": 113,
+                    "element_in": 258,
+                    "element_out": 23,
+                    "entry": 5521493,
+                    "event": 19
+                }],
+            "transfers": [{
+                    "order": 0,
+                    "transfer_in": "Felipe Anderson",
+                    "transfer_in_points": 15,
+                    "transfer_out": "Fraser",
+                    "transfer_out_points": 2
+                }, {
+                    "order": 1,
+                    "transfer_in": "Hazard",
+                    "transfer_in_points": 15,
+                    "transfer_out": "Pereyra",
+                    "transfer_out_points": 9
+                }, {
+                    "order": 2,
+                    "transfer_in": "Ings",
+                    "transfer_in_points": 2,
+                    "transfer_out": "Aubameyang",
+                    "transfer_out_points": 8
+                }]
+        }, {
+            "playerId": 5660989,
+            "teamName": "khalil brahem",
+            "transfers_list": [{
+                    "id": 118726683,
+                    "time_formatted": "26 Dec 09:39",
+                    "time": "2018-12-26T09:39:45Z",
+                    "element_in_cost": 45,
+                    "element_out_cost": 45,
+                    "element_in": 490,
+                    "element_out": 135,
+                    "entry": 5660989,
+                    "event": 19
+                }],
+            "transfers": [{
+                    "order": 0,
+                    "transfer_in": "Hart",
+                    "transfer_in_points": 0,
+                    "transfer_out": "Hennessey",
+                    "transfer_out_points": 0
+                }]
+        }, {
+            "playerId": 5667855,
+            "teamName": "Maher nahali",
+            "transfers_list": [],
+            "transfers": []
+        }, {
+            "playerId": 5862705,
+            "teamName": "ash rs",
+            "transfers_list": [{
+                    "id": 119086578,
+                    "time_formatted": "26 Dec 11:16",
+                    "time": "2018-12-26T11:16:04Z",
+                    "element_in_cost": 52,
+                    "element_out_cost": 52,
+                    "element_in": 450,
+                    "element_out": 101,
+                    "entry": 5862705,
+                    "event": 19
+                }],
+            "transfers": [{
+                    "order": 0,
+                    "transfer_in": "Torreira",
+                    "transfer_in_points": 2,
+                    "transfer_out": "Paterson",
+                    "transfer_out_points": 0
+                }]
+        }, {
+            "playerId": 5964334,
+            "teamName": "Ben afia Ahmed amine",
+            "transfers_list": [{
+                    "id": 114738037,
+                    "time_formatted": "23 Dec 02:38",
+                    "time": "2018-12-23T02:38:09Z",
+                    "element_in_cost": 70,
+                    "element_out_cost": 44,
+                    "element_in": 305,
+                    "element_out": 189,
+                    "entry": 5964334,
+                    "event": 19
+                }, {
+                    "id": 119135717,
+                    "time_formatted": "26 Dec 11:25",
+                    "time": "2018-12-26T11:25:08Z",
+                    "element_in_cost": 110,
+                    "element_out_cost": 97,
+                    "element_in": 122,
+                    "element_out": 275,
+                    "entry": 5964334,
+                    "event": 19
+                }],
+            "transfers": [{
+                    "order": 0,
+                    "transfer_in": "Rashford",
+                    "transfer_in_points": 2,
+                    "transfer_out": "Kamara",
+                    "transfer_out_points": 2
+                }, {
+                    "order": 1,
+                    "transfer_in": "Hazard",
+                    "transfer_in_points": 15,
+                    "transfer_out": "Sané",
+                    "transfer_out_points": 2
+                }]
+        }, {
+            "playerId": 5965937,
+            "teamName": "debbabi ghassen",
+            "transfers_list": [],
+            "transfers": []
         }]
 
 ]

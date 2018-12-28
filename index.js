@@ -68,7 +68,7 @@ function getCaptains(leagueId, event, callback) {
     })
 }
 function getTransfers(event, leagueId, callback) {
-    if (event < 19) {
+    if (event < 20) {
         callback(transfers[event - 2])
     } else {
         azifpl.getTransfersList(event, leagueId).then(function (res) {
