@@ -157,7 +157,8 @@
                     <div ng-if="option == 'transfer'" style="width: 77%;
                          margin: 0 auto;">
                         Gameweek: <select style="    margin-bottom: 5px;" ng-model="gameweek" ng-change="getTransfers(9908, gameweek)">
-                            <option  value="2">Gameweek 2</option>
+                            <option ng-repeat="event in events" value="event">Gameweek {{ event }}</option>
+<!--                            <option  value="2">Gameweek 2</option>
                             <option  value="3">Gameweek 3</option>
                             <option  value="4">Gameweek 4</option>
                             <option  value="5">Gameweek 5</option>
@@ -176,6 +177,7 @@
                             <option  value="18">Gameweek 18</option>
                             <option  value="19">Gameweek 19</option>
                             <option  value="20">Gameweek 20</option>
+                            <option  value="20">Gameweek 21</option>-->
                         </select>
                         <div style="    font-size: 18px;
                              text-align: left;
@@ -219,6 +221,8 @@
             <!--</div>-->
             <!--</div>-->
         </div>
-
+        <input ng-model="code"/>
+        <input ng-model="eventToSetAsCurrent">
+        <button ng-click="setCurrentEvent(eventToSetAsCurrent,code)">event</button>
     </body>
 </html>

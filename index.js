@@ -2,8 +2,9 @@ var azifpl = require('azifpl');
 var express = require('express');
 var app = express();
 var scheduler = require('node-schedule');
-//var currentEvent = 19;
+var fs = require('fs');//var currentEvent = 19;
 var port = process.env.PORT || 8080;
+var currentEvent = 21;
 var transfers = require('./archive.json')
 
 app.use(express.static(__dirname + '/public'));
@@ -68,10 +69,26 @@ function getCaptains(leagueId, event, callback) {
     })
 }
 function getTransfers(event, leagueId, callback) {
-    if (event < 20) {
+
+    if (event < currentEvent) {
         callback(transfers[event - 2])
     } else {
         azifpl.getTransfersList(event, leagueId).then(function (res) {
+//            console.log('-----------xxxxxxx-----------------')
+//            if (transfers[event - 2] == undefined) {
+//                transfers[event - 2] = res
+//                fs.writeFile('archive.json', transfers, function (err) {
+//                    // throws an error, you could also catch it here
+//                    if (err)
+//                        console.log('file errror saved!');
+//                    throw err;
+//                    // success case, the file was saved
+//                    console.log('file success saved!');
+//                });
+//            }
+//
+//            console.log('------------xxxxxx-------------------')
+
             callback(res)
         }, function (err) {
             callback(err)
@@ -79,7 +96,10 @@ function getTransfers(event, leagueId, callback) {
     }
 
 }
-
+app.get('/set-current-event/:current_event', function (req, res) {
+    currentEvent = req.params.current_event
+    res.send({success: true});
+})
 app.get('/league-data/:leagueId', function (req, res) {
     leaguePlayers(req.params.leagueId, function (x) {
         res.send(x);

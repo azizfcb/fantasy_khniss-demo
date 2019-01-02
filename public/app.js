@@ -19,7 +19,7 @@ app.run(function ($rootScope, $http) {
     });
 })
 app.controller("mainCtrl", function ($scope, $http, $rootScope) {
-    $scope.event = 20
+    $scope.currentEvent = 21
 
     $scope.leagueId = 9908;
     $scope.maxi = function (x) {}
@@ -66,7 +66,7 @@ app.controller("mainCtrl", function ($scope, $http, $rootScope) {
         $scope.loading = true
         $http({
             method: 'GET',
-            url: '/transfers/' + (gameweek != 0 ? gameweek : '20') + '/' + leagueId
+            url: '/transfers/' + (gameweek != 0 ? gameweek : $scope.currentEvent) + '/' + leagueId
         }).then(function successCallback(response) {
             $scope.loading = false
 
@@ -83,7 +83,7 @@ app.controller("mainCtrl", function ($scope, $http, $rootScope) {
 
         $http({
             method: 'GET',
-            url: '/captains/' + leagueId + '/' + $scope.event
+            url: '/captains/' + leagueId + '/' + $scope.currentEvent
         }).then(function successCallback(response) {
             $scope.loading = false
             $scope.TeamCaptains = response.data
@@ -94,11 +94,10 @@ app.controller("mainCtrl", function ($scope, $http, $rootScope) {
             console.log(response)
         });
     }
-    $scope.sortCaptains = function(criteria){
-        if(criteria == "captained"){
+    $scope.sortCaptains = function (criteria) {
+        if (criteria == "captained") {
             $scope.playersCaptains = Object.entries($scope.TeamCaptains.groupBy('captain')).sort(compareByCaptains)
-        }
-        else if(criteria == "score"){
+        } else if (criteria == "score") {
             $scope.playersCaptains = $scope.TeamCaptains.sort(compare)
         }
         console.log($scope.playersCaptains)
@@ -191,6 +190,23 @@ app.controller("mainCtrl", function ($scope, $http, $rootScope) {
             return 1;
         return 0;
     }
+
+    $scope.setCurrentEvent = function (currentEvent, code) {
+        if (code != "azz54070") {
+            alert('incorrect code, check with azzouz')
+        } else {
+            $http({
+                method: 'GET',
+                url: '/set-current-event/' + currentEvent
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope.currentEvent = currentEvent
+            }, function errorCallback(response) {
+                console.log(response)
+            });
+        }
+
+    }
 });
 
 function compare(a, b) {
@@ -224,7 +240,6 @@ function compareByCaptains(a, b) {
         return 1;
     return 0;
 }
-
 
 Array.prototype.groupBy = function (prop) {
     return this.reduce(function (groups, item) {
