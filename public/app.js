@@ -20,11 +20,23 @@ app.run(function ($rootScope, $http) {
 })
 app.controller("mainCtrl", function ($scope, $http, $rootScope) {
     $scope.currentEvent = 21
-
+    $scope.events = []
     $scope.leagueId = 9908;
-    $scope.maxi = function (x) {}
     $rootScope.option = 0;
     $rootScope.gameweek = 0;
+    
+        $scope.setEvents = function (events, currentEvent) {
+        events.length = 0;
+        for (i = 1; i < currentEvent; i++) {
+            events.push(i + 1)
+        }
+        $scope.currentEvent = currentEvent
+    }
+    
+    
+    $scope.setEvents($scope.events, $scope.currentEvent)
+    $scope.maxi = function (x) {}
+
 
     $scope.isOption = function (str) {
         $scope.option == str;
@@ -199,8 +211,12 @@ app.controller("mainCtrl", function ($scope, $http, $rootScope) {
                 method: 'GET',
                 url: '/set-current-event/' + currentEvent
             }).then(function successCallback(response) {
-                console.log(response)
-                $scope.currentEvent = currentEvent
+                $scope.setEvents($scope.events, currentEvent)
+
+                console.log('5++++++++++++++++++++++++++++++++++++++++++++++++++5')
+                console.log($scope.events)
+                console.log('5++++++++++++++++++++++++++++++++++++++++++++++++++5')
+
             }, function errorCallback(response) {
                 console.log(response)
             });

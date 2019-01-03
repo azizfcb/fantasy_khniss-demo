@@ -37,7 +37,7 @@
                 <li class="active" style="width: 100%;"><a data-toggle="tab" href="#home"><span >Khniss city statistiques</span></a></li>
             </ul>
             <div class="tab-content">
-                <div id="home" class="element tab-pane in active">
+                <div style ="    padding-left: 0;" id="home" class="element tab-pane in active">
                     <div>
                         <select class="list-option" ng-model="option" ng-change="isOption(option)">
                             <option value="stats">statistiques kol wa7ed</option>
@@ -47,7 +47,7 @@
                             <option value="transfer"> Transfer kol wa7ed</option>
                             <option value="average">  Average Gameweek points </option>  
                         </select>
-                        <div ng-if="option == 'stats'" style="width: 77%;
+                        <div ng-if="option == 'stats'" style="width: 88%;
                              margin: 0 auto;">
                             <select ng-model="playerStats" ng-change="getTeamStats(playerStats)">
                                 <option ng-repeat="player in leaguePlayers" value="{{player.entry}}">{{ player.player_name}}</option>
@@ -106,13 +106,13 @@
                             <br>
                         </div>
                     </div>
-                    <div ng-if="option == 'cup'" style="width: 77%;
+                    <div ng-if="option == 'cup'" style="width: 88%;
                          margin: 0 auto;">
                         <li style="font-size: 15px;" ng-repeat="player in leaguePlayersInCup" class="item" ng-class="player.cupStatus ? 'success' : 'danger'">{{ player.teamName}}<span style="margin-right: 5px;float: right"> Played: {{ player.cupRoundsPlayed.roundsPlayed}}</span> </li>
                     </div>
-                    <div ng-if="option == 'average'" style="width: 77%;
+                    <div ng-if="option == 'average'" style="width: 88%;
                          margin: 0 auto;">
-                        <li style="font-size: 18px;" ng-class="averageData.average > 0 ? player.event_total > averageData.average ? 'success' : 'danger' : ''" ng-repeat="player in leaguePlayers" class="item" >{{ player.entry_name}}<span style="margin-right: 5px;float: right"> {{player.event_total}}/{{averageData.average}}</span></li>
+                        <li style="font-size: 15px;padding-left: 5px;"  ng-class="averageData.average > 0 ? player.event_total > averageData.average ? 'success' : 'danger' : ''" ng-repeat="player in leaguePlayers" class="item" >{{ player.entry_name}}<span style="margin-right: 5px;float: right"> {{player.event_total}}/{{averageData.average}}</span></li>
                     </div>
                     <div ng-if="option == 'highLow'">
                         {{ highestGameweek}}
@@ -124,7 +124,7 @@
                                                         {{ lowesttGameweek.data.maxBenchedPoints.value }} --------- {{ lowesttGameweek.teamName }} in GW {{ lowesttGameweek.data.maxBenchedPoints.event }}
                                                     </span>-->
                     </div>
-                    <div ng-if="option == 'captains'" style="width: 77%;
+                    <div ng-if="option == 'captains'" style="width: 88%;
                          margin: 0 auto;">
                         <select ng-model="criteria" ng-change="sortCaptains(criteria)" style="                             margin-bottom: 15px;">
                             <option value="captained">أكثر واحد مكبتتنو</option>
@@ -135,94 +135,96 @@
                              margin-bottom: 4px;
                              text-align: center;
                              border: 2px solid;
-                             font-size: 25px; 
+                             font-size: 20px; 
                              padding-top: 5px;
                              border-radius: 2px;
                              padding-left: 0;; 
                              " ng-repeat="player in playersCaptains" class="item" >
-                            <span ng-if="criteria == 'captained'">{{ player[0]}} - captained {{ player[1].length}}</span>
+                            <span style="color: brown;" ng-if="criteria == 'captained'"><b>{{ player[0]}} - captained {{ player[1].length}}</b></span>
                             <div ng-if="criteria == 'captained'" ng-repeat="team in player[1]" style="border-bottom: 1px dashed;    margin-bottom: -1px;">
-                                <span style=" font-size: 20px;     ">{{team.teamName}}</span>
-                                <div style="    font-size: 18px;">Captain: <span> {{team.captain}} / {{ team.captainScore}} </span></div>
-                                <div style="    font-size: 18px;">Vice-C: <span>  {{team.viceCaptain}} / {{ team.viceCaptainScore}} </span></div>
+                                <b><span style=" font-size: 18px;     ">{{team.teamName}}</span></b>
+                                <div style="    font-size: 15px;">Captain: <span> {{team.captain}} / {{ team.captainScore}} </span></div>
+                                <div style="    font-size: 15px;">Vice-C: <span>  {{team.viceCaptain}} / {{ team.viceCaptainScore}} </span></div>
                             </div>
 
-                            <span ng-if="criteria == 'score'" >{{ player.teamName}}</span>
-                            <div ng-if="criteria == 'score'"  style="font-size: 18px;">Captain: <span> {{player.captain}} / {{ player.captainScore}} </span></div>
-                            <div ng-if="criteria == 'score'" style="    font-size: 18px;">Vice-C: <span>  {{player.viceCaptain}} / {{ player.viceCaptainScore}} </span></div>
+                            <b><span ng-if="criteria == 'score'" style=" font-size: 18px;">{{ player.teamName}}</span><b>
+                                    <div ng-if="criteria == 'score'"  style="font-size: 15px;">Captain: <span> {{player.captain}} / {{ player.captainScore}} </span></div>
+                                    <div ng-if="criteria == 'score'" style="    font-size: 15px;">Vice-C: <span>  {{player.viceCaptain}} / {{ player.viceCaptainScore}} </span></div>
 
-                        </div>
-                    </div>
-                    <img ng-if="loading" src="loader.gif" style="margin-top: 25px;height: 35px;"/>
-                    <div ng-if="option == 'transfer'" style="width: 77%;
-                         margin: 0 auto;">
-                        Gameweek: <select style="    margin-bottom: 5px;" ng-model="gameweek" ng-change="getTransfers(9908, gameweek)">
-                            <option ng-repeat="event in events" value="event">Gameweek {{ event }}</option>
-<!--                            <option  value="2">Gameweek 2</option>
-                            <option  value="3">Gameweek 3</option>
-                            <option  value="4">Gameweek 4</option>
-                            <option  value="5">Gameweek 5</option>
-                            <option  value="6">Gameweek 6</option>
-                            <option  value="7">Gameweek 7</option>
-                            <option  value="8">Gameweek 8</option>
-                            <option  value="9">Gameweek 9</option>
-                            <option  value="10">Gameweek 10</option>
-                            <option  value="11">Gameweek 11</option>
-                            <option  value="12">Gameweek 12</option>
-                            <option  value="13">Gameweek 13</option>
-                            <option  value="14">Gameweek 14</option>
-                            <option  value="15">Gameweek 15</option>
-                            <option  value="16">Gameweek 16</option>
-                            <option  value="17">Gameweek 17</option>
-                            <option  value="18">Gameweek 18</option>
-                            <option  value="19">Gameweek 19</option>
-                            <option  value="20">Gameweek 20</option>
-                            <option  value="20">Gameweek 21</option>-->
-                        </select>
-                        <div style="    font-size: 18px;
-                             text-align: left;
-                             border: 3px solid;
-                             margin-bottom: 6px;
-                             border-radius: 4px;" ng-repeat="player in playerTransfers" class="item" >
-                            <span>{{ player.teamName}}</span>
-                            <div ng-if="player.transfers.length > 0" style="border: 1px solid;
-                                 margin-bottom: 6px;
-                                 margin-left: 5px;
-                                 margin-right: 19px;">
-                                <div ng-repeat="transfer in player.transfers" style="
-                                     font-size: 13px;
-                                     margin: 0;
-                                     margin-bottom: -1px;
-                                     text-align: center;
-                                     border-bottom: 1px dashed;
-                                     ">
-                                    <div> <span class="glyphicon glyphicon-arrow-right" style="color:green;"></span> {{ transfer.transfer_in}} / {{transfer.transfer_in_points}} </div>
-                                    <div><span class="glyphicon glyphicon-arrow-left" style="color:red;"></span> {{ transfer.transfer_out}} / {{transfer.transfer_out_points}} </div>
-                                    <span style="float: right;
-    margin-top: -27px;
-    margin-right: 10px;" ng-if="transfer.transfer_in_points < transfer.transfer_out_points ">🐴</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>            
+                                    </div>
+                                    </div>
+                                    <img ng-if="loading" src="loader.gif" style="margin-top: 25px;height: 35px;"/>
+                                    <div ng-if="option == 'transfer'" style="width: 88%;
+                                         margin: 0 auto;">
+                                        Gameweek: <select style="    margin-bottom: 5px;" ng-model="gameweek" ng-change="getTransfers(9908, gameweek)">
+                                            <option ng-repeat="event in events" value="{{ event}}">Gameweek {{ event}}</option>
+                                            <!--                            <option  value="2">Gameweek 2</option>
+                                                                        <option  value="3">Gameweek 3</option>
+                                                                        <option  value="4">Gameweek 4</option>
+                                                                        <option  value="5">Gameweek 5</option>
+                                                                        <option  value="6">Gameweek 6</option>
+                                                                        <option  value="7">Gameweek 7</option>
+                                                                        <option  value="8">Gameweek 8</option>
+                                                                        <option  value="9">Gameweek 9</option>
+                                                                        <option  value="10">Gameweek 10</option>
+                                                                        <option  value="11">Gameweek 11</option>
+                                                                        <option  value="12">Gameweek 12</option>
+                                                                        <option  value="13">Gameweek 13</option>
+                                                                        <option  value="14">Gameweek 14</option>
+                                                                        <option  value="15">Gameweek 15</option>
+                                                                        <option  value="16">Gameweek 16</option>
+                                                                        <option  value="17">Gameweek 17</option>
+                                                                        <option  value="18">Gameweek 18</option>
+                                                                        <option  value="19">Gameweek 19</option>
+                                                                        <option  value="20">Gameweek 20</option>
+                                                                        <option  value="20">Gameweek 21</option>-->
+                                        </select>
+                                        <div style="    font-size: 14px;
+                                             text-align: center;
+                                             border: 3px solid;
+                                             margin-bottom: 6px;
+                                             border-radius: 4px;" ng-repeat="player in playerTransfers" class="item" >
+                                            <b><span>{{ player.teamName}}</span></b>
+                                            <div ng-if="player.transfers.length > 0" style="border: 1px solid;
+                                                 margin-bottom: 6px;
+                                                 margin-left: 7px;
+                                                 margin-right: 7px;">
+                                                <div ng-repeat="transfer in player.transfers" style="
+                                                     font-size: 13px;
+                                                     margin: 0;
+                                                     margin-bottom: -1px;
+                                                     text-align: center;
+                                                     border-bottom: 1px dashed;
+                                                     ">
+                                                    <div> <span class="glyphicon glyphicon-arrow-right" style="color:green;"></span> {{ transfer.transfer_in}} / {{transfer.transfer_in_points}} </div>
+                                                    <div><span class="glyphicon glyphicon-arrow-left" style="color:red;"></span> {{ transfer.transfer_out}} / {{transfer.transfer_out_points}} </div>
+                                                    <span style="float: right;
+                                                          margin-top: -27px;
+                                                          margin-right: 10px;" ng-if="transfer.transfer_in_points < transfer.transfer_out_points">🐴</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>            
 
-                </div>
-            </div>
+                                    </div>
+                                    </div>
 
-            <!--<div id="menu5" class="element tab-pane fade">-->
-            <!--<div class="test"><h1>Total Transfert Cost</h1>-->
-            <!--<p>This feature let's you get total cost of transferts you made till the current gameweek</p>-->
-            <!--<P>Enter your team ID here:</P><input ng-model="id5" type="text" class="form-control">-->
-            <!--<button ng-click="totalCost(id5)" class="btn btn-primary">Get result</button>-->
-            <!--</div>-->
-            <!--<div class="test result"><h1>Result:</h1>-->
-            <!--<div class="data">{{ tcost }}</div>-->
-            <!--</div>-->
-            <!--</div>-->
-        </div>
-        <input ng-model="code"/>
-        <input ng-model="eventToSetAsCurrent">
-        <button ng-click="setCurrentEvent(eventToSetAsCurrent,code)">event</button>
-    </body>
-</html>
+                                    <!--<div id="menu5" class="element tab-pane fade">-->
+                                    <!--<div class="test"><h1>Total Transfert Cost</h1>-->
+                                    <!--<p>This feature let's you get total cost of transferts you made till the current gameweek</p>-->
+                                    <!--<P>Enter your team ID here:</P><input ng-model="id5" type="text" class="form-control">-->
+                                    <!--<button ng-click="totalCost(id5)" class="btn btn-primary">Get result</button>-->
+                                    <!--</div>-->
+                                    <!--<div class="test result"><h1>Result:</h1>-->
+                                    <!--<div class="data">{{ tcost }}</div>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    </div>
+<!--                                    <div><input ng-model="code"/>
+                                        <input ng-model="eventToSetAsCurrent">
+                                        <button ng-click="setCurrentEvent(eventToSetAsCurrent, code)">event</button>
+                                    </div>-->
+
+                                    </body>
+                                    </html>

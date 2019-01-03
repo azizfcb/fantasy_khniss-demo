@@ -70,31 +70,26 @@ function getCaptains(leagueId, event, callback) {
 }
 function getTransfers(event, leagueId, callback) {
 
-    if (event < currentEvent) {
-        callback(transfers[event - 2])
-    } else {
-        azifpl.getTransfersList(event, leagueId).then(function (res) {
-//            console.log('-----------xxxxxxx-----------------')
-//            if (transfers[event - 2] == undefined) {
-//                transfers[event - 2] = res
-//                fs.writeFile('archive.json', transfers, function (err) {
-//                    // throws an error, you could also catch it here
-//                    if (err)
-//                        console.log('file errror saved!');
-//                    throw err;
-//                    // success case, the file was saved
-//                    console.log('file success saved!');
-//                });
-//            }
-//
-//            console.log('------------xxxxxx-------------------')
+    if (transfers[event - 2] == undefined) {
 
+        azifpl.getTransfersList(event, leagueId).then(function (res) {
+            if (!JSON.stringify(res).includes(429)) {
+                transfers[event - 2] = res
+                fs.writeFile('archive.json', JSON.stringify(transfers), function (err) {
+                    if (err != null) {
+                        console.log(err)
+                    } else {
+                        console.log('file success saved!');
+                    }
+                });
+            }
             callback(res)
         }, function (err) {
             callback(err)
         })
+    } else {
+        callback(transfers[event - 2])
     }
-
 }
 app.get('/set-current-event/:current_event', function (req, res) {
     currentEvent = req.params.current_event
