@@ -48,7 +48,7 @@
                             <option value="average">  Average Gameweek points </option>  
                         </select>
                         <div ng-if="option == 'stats'" style="width: 88%;
-                             margin: 0 auto;">
+                             margin: 0 auto;overflow: auto;">
                             <select ng-model="playerStats" ng-change="getTeamStats(playerStats)">
                                 <option ng-repeat="player in leaguePlayers" value="{{player.entry}}">{{ player.player_name}}</option>
                             </select >

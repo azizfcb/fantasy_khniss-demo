@@ -224,7 +224,7 @@ div:nth-child(1) > p:nth-child(2), div:nth-child(1) > p:nth-child(3){
     }
 
     #home {
-        height: inherit;
+        /* height: inherit; */
     }
 
     #home > h2 {
