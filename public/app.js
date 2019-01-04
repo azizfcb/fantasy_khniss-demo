@@ -100,6 +100,7 @@ app.controller("mainCtrl", function ($scope, $http, $rootScope) {
             $scope.loading = false
             $scope.TeamCaptains = response.data
             $scope.playersCaptains = Object.entries($scope.TeamCaptains.groupBy('captain')).sort(compareByCaptains)
+            console.log($scope.playersCaptains)
         }, function errorCallback(response) {
             $scope.loading = false
 
@@ -212,10 +213,6 @@ app.controller("mainCtrl", function ($scope, $http, $rootScope) {
                 url: '/set-current-event/' + currentEvent
             }).then(function successCallback(response) {
                 $scope.setEvents($scope.events, currentEvent)
-
-                console.log('5++++++++++++++++++++++++++++++++++++++++++++++++++5')
-                console.log($scope.events)
-                console.log('5++++++++++++++++++++++++++++++++++++++++++++++++++5')
 
             }, function errorCallback(response) {
                 console.log(response)

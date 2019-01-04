@@ -2,16 +2,69 @@ body {
     background-image: url("background.jpg");
 }
 
+.kc-header{
+    background-color: rgba(19, 95, 63, 0.41);
+    border: 1px solid white;
+    font-size: 20px;
+    width: 80%;
+    color: white;
+    margin: 1px auto;
+}
+
+.block{
+    width: 88%;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.styled-select {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+    height: 29px;
+    overflow: hidden;
+    width: 240px;
+    margin-top: 18px;
+    width: 93%;
+}
+
+.styled-select > select {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    height: 29px;
+    padding: 2px; /* If you add too much padding here, the options won't show in IE */
+    width: 268px;
+    font-size: 17px;
+}
+
+.semi-square {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* -------------------- Colors: Background */
+.blue    { background-color: #3b8ec2; }
+.brown    { background-color: brown; }
+/* -------------------- Colors: Text */
+.blue select    { color: #fff; }
+.blue,.brown select    { color: #fff; }
+
 .container {
     margin-top: 50px;
     text-align: center;
 }
-.item{
-    font-size: 21px;
+.block > .item {
     width: 100%;
     margin: 0 auto;
     text-align: left;
-    /* padding-left: 15px; */
+    font-size: 15px;
+    padding-left: 5px;
+}
+.block .played {
+    margin-right: 5px;
+    float: right
 }
 .success{
     background-color: #32b232;;
@@ -19,11 +72,7 @@ body {
 .danger{
     background-color: #e14545;;
 }
-.list-option{
-    margin: 21px;
-    width: 218px;
-    font-size: 17px;
-}
+
 .element {
     background-color: rgba(245, 245, 245, 0.88);
     /* width: 30%; */
