@@ -71,7 +71,7 @@ function getCaptains(leagueId, event, callback) {
 }
 function getTransfers(event, leagueId, callback) {
 
-    if (transfers[event - 2] == undefined || !finishedEvent) {
+    if (event == currentEvent && !finishedEvent ){
 
         azifpl.getTransfersList(event, leagueId).then(function (res) {
             if (!JSON.stringify(res).includes(429)) {

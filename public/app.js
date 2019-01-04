@@ -81,7 +81,7 @@ app.controller("mainCtrl", function ($scope, $http, $rootScope) {
             url: '/transfers/' + (gameweek != 0 ? gameweek : $scope.currentEvent) + '/' + leagueId
         }).then(function successCallback(response) {
             $scope.loading = false
-
+console.log(response.data)
             $scope.playerTransfers = response.data.sort(compareTransfer)
         }, function errorCallback(response) {
             $scope.loading = false
@@ -239,6 +239,10 @@ function compare(a, b) {
     }
 }
 function compareTransfer(a, b) {
+    
+    console.log('---------------------------------------------------------')
+    console.log(a)
+    console.log('---------------------------------------------------------')
     if (a.transfers.length > b.transfers.length)
         return -1;
     if (a.transfers.length < b.transfers.length)
