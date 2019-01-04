@@ -5,10 +5,11 @@ body {
 .kc-header{
     background-color: rgba(19, 95, 63, 0.41);
     border: 1px solid white;
-    font-size: 20px;
+    font-size: 15px;
     width: 80%;
     color: white;
     margin: 1px auto;
+    padding: 0;
 }
 
 .block{
@@ -16,7 +17,9 @@ body {
     margin: 0 auto;
     overflow: auto;
 }
-
+option {
+    font-size: 10px !important;
+}
 .styled-select {
     margin: 0 auto;
     margin-bottom: 10px;

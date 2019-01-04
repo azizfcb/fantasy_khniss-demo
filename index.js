@@ -5,6 +5,7 @@ var scheduler = require('node-schedule');
 var fs = require('fs');//var currentEvent = 19;
 var port = process.env.PORT || 8080;
 var currentEvent = 21;
+var finishedEvent = false;
 var transfers = require('./archive.json')
 
 app.use(express.static(__dirname + '/public'));
@@ -70,7 +71,7 @@ function getCaptains(leagueId, event, callback) {
 }
 function getTransfers(event, leagueId, callback) {
 
-    if (transfers[event - 2] == undefined) {
+    if (transfers[event - 2] == undefined || !finishedEvent) {
 
         azifpl.getTransfersList(event, leagueId).then(function (res) {
             if (!JSON.stringify(res).includes(429)) {
@@ -91,8 +92,9 @@ function getTransfers(event, leagueId, callback) {
         callback(transfers[event - 2])
     }
 }
-app.get('/set-current-event/:current_event', function (req, res) {
+app.get('/set-current-event/:current_event/:finished', function (req, res) {
     currentEvent = req.params.current_event
+    finishedEvent = req.params.current_event
     res.send({success: true});
 })
 app.get('/league-data/:leagueId', function (req, res) {
